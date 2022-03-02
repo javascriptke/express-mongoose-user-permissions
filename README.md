@@ -58,15 +58,15 @@ This is a class base way of implementing the Model and adding, removing, resetit
 
 ```ts
 class Role {
-  private _permisions: number;
+  private _permissions: number;
   private _name: string;
 
   constructor() {
-    this._permisions = 0;
+    this._permissions = 0;
   }
 
   public get permissions(): number {
-    return this._permisions;
+    return this._permissions;
   }
 
   public get name(): string {
@@ -76,13 +76,13 @@ class Role {
    //* Add user role
   addPermission = (permission: number): void => {
     if (!this.hasPermission(permission)) {
-      this._permisions += permission;
+      this._permissions += permission;
     }
   };
    // * Remove user role
   removePermission = (permission: number): void => {
     if (this.hasPermission(permission)) {
-      this._permisions -= permission;
+      this._permissions -= permission;
     }
   };
 
@@ -92,7 +92,7 @@ class Role {
   };
    //* Reset all permissions
   resetPermissions = (): void => {
-    this._permisions = 0;
+    this._permissions = 0;
   };
 }
 
