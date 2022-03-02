@@ -16,7 +16,7 @@ I've emulated a blog site permissions that has the following roles:
 
 - Comment on a post
 - View a post
-- Like Like a given post
+- Like a given post
 - Moderate the comment,likes on a post i.e Moderatoe
 - Overall Admin (The platform owner with all permissions)
 
