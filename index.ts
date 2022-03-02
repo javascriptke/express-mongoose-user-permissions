@@ -58,4 +58,4 @@ role1.addPermission(UserPermissions.WRITE);
 role1.addPermission(UserPermissions.COMMENT);
 role1.removePermission(UserPermissions.FOLLOW);
 
-console.log(role1.hasPermission(UserPermissions.ADMIN));
+console.log(role1.hasPermission(UserPermissions.COMMENT));
