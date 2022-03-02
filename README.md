@@ -72,42 +72,31 @@ class Role {
   public get name(): string {
     return this._name;
   }
-  /**
-   *
-   * Add user role
-   */
+
+   //* Add user role
   addPermission = (permission: number): void => {
     if (!this.hasPermission(permission)) {
       this._permisions += permission;
     }
   };
-  /**
-   *
-   * Remove user role
-   */
+   // * Remove user role
   removePermission = (permission: number): void => {
     if (this.hasPermission(permission)) {
       this._permisions -= permission;
     }
   };
-  /**
-   *
-   * Check is a user has a given role
-   *
-   */
+
+   //* Check is a user has a given role
   hasPermission = (permission: number): boolean => {
     return (this.permissions & permission) === permission;
   };
- /**
-   *
-   * Reset all permissions
-   */
+   //* Reset all permissions
   resetPermissions = (): void => {
     this._permisions = 0;
   };
 }
 
-enum UserPermissions {
+enum Permissions {
   FOLLOW = 1,
   COMMENT = 2,
   WRITE = 4,
@@ -116,11 +105,11 @@ enum UserPermissions {
 }
 
 const role1 = new Role();
-role1.addPermission(UserPermissions.WRITE);
-role1.addPermission(UserPermissions.COMMENT);
-role1.removePermission(UserPermissions.FOLLOW);
+role1.addPermission(Permissions.WRITE);
+role1.addPermission(Permissions.COMMENT);
+role1.removePermission(Permissions.FOLLOW);
 
-console.log(role1.hasPermission(UserPermissions.COMMENT));
+console.log(role1.hasPermission(Permissions.COMMENT));
 ```
 
 The project is open for Development and anyone wishing to help extend the codebase. I would highly appreciate
