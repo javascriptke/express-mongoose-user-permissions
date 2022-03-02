@@ -1,15 +1,23 @@
 {
-  "name": "backend-server",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Learn how to create custom user permissions with express Js and mongodb",
   "main": "index.js",
   "scripts": {
     "start": "node ./dist/app.js",
     "dev:start": "nodemon ./src/app.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "node",
+    "roles",
+    "template",
+    "express js",
+    "express",
+    "typescript",
+    "permissions"
+  ],
+  "author": "Felix Orinda",
+  "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.0",
@@ -24,5 +32,13 @@
     "@types/node": "^17.0.21",
     "ts-node": "^10.6.0",
     "typescript": "^4.6.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JS-devsKE/express-mongoose-user-permissions.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JS-devsKE/express-mongoose-user-permissions/issues"
+  },
+  "homepage": "https://github.com/JS-devsKE/express-mongoose-user-permissions#readme"
 }

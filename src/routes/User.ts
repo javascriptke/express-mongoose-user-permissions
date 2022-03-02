@@ -23,7 +23,7 @@ router.post("/register", async (req, res) => {
       .status(400)
       .json({ success: false, message: "Password required" });
   }
-  const role = await RoleModel.findOne({ default: true });
+  const role =  RoleModel.getDefaultRole();
   const newUser = await (
     await UserModel.create({ ...req.body, role })
   ).populate("role", "name permissions");

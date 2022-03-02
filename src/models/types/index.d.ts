@@ -14,11 +14,12 @@ interface IRoleDocument extends IRole, Document {
   removePermission: (permission: number) => void;
   hasPermission: (permission: number) => boolean;
   resetPermission: () => void;
-  getDefaultRole: () => Promise<IRoleDocument>;
+ 
 }
 
 interface IRoleModel extends Model<IRoleDocument> {
   insertRoles: () => void;
+  getDefaultRole: () => Promise<IRoleDocument>;
 }
 
 /**
