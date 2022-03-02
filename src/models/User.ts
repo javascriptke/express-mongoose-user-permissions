@@ -13,6 +13,7 @@ const UserSchema: Schema<IUserDocument> = new Schema({
     type: String,
     minlength: 8,
     required: true,
+    select:false
   },
   role: {
     type: SchemaTypes.ObjectId,
@@ -31,6 +32,7 @@ UserSchema.methods.hashPassword = async function (
   const salt = await bcrypt.genSalt(10);
   const passwordHash = await bcrypt.hash(password, salt);
   this.password = passwordHash;
+  await this.save()
 };
 UserSchema.methods.comparePassword = async function (
   password: string

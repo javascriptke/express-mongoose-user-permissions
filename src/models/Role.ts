@@ -73,9 +73,9 @@ RoleSchema.statics.insertRoles = async function () {
   }
 };
 
-RoleSchema.statics.getDefaultRole = async function () {
+RoleSchema.statics.getDefaultRole = async function ():Promise<IRoleDocument>{
   const roles = await Role.findOne({ default: true });
-  return roles;
+  return roles!;
 };
 
 export const Role = model<IRoleDocument, IRoleModel>("Role", RoleSchema);
