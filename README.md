@@ -58,11 +58,13 @@ This is a class base way of implementing the Model and adding, removing, resetit
 
 ```ts
 class Role {
-  private _permissions: number;
-  private _name: string;
+  private _permissions: number=0;
+  private _name: string="";
 
-  constructor() {
+  constructor(name:string) {
     this._permissions = 0;
+    this._name=name
+    
   }
 
   public get permissions(): number {
@@ -96,7 +98,7 @@ class Role {
   };
 }
 
-enum Permissions {
+enum  Perms {
   FOLLOW = 1,
   COMMENT = 2,
   WRITE = 4,
@@ -104,12 +106,12 @@ enum Permissions {
   ADMIN = 16,
 }
 
-const role1 = new Role();
-role1.addPermission(Permissions.WRITE);
-role1.addPermission(Permissions.COMMENT);
-role1.removePermission(Permissions.FOLLOW);
+const role1 = new Role("User");
+role1.addPermission(Perms.WRITE);
+role1.addPermission(Perms.COMMENT);
+role1.removePermission(Perms.FOLLOW);
 
-console.log(role1.hasPermission(Permissions.COMMENT));
+console.log(role1.hasPermission(Perms.MODERATE));
 ```
 
 The project is open for Development and anyone wishing to help extend the codebase. I would highly appreciate
